@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esponjamanía: Video Informativo</title>
+    
+    <style>
+        /* === REUTILIZAMOS EL MISMO ESTILO DE FONDO Y BURBUJAS === */
+        body {
+            background: radial-gradient(circle, #ffe066 10%, #ffcc00 90%);
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            margin: 0;
+            overflow: hidden; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .burbujas-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;
+        }
+        .burbuja {
+            position: absolute; bottom: -100px; background: rgba(255, 255, 255, 0.4); border: 1px solid rgba(255, 255, 255, 0.6); border-radius: 50%; animation: subir 10s linear infinite;
+        }
+        .burbuja::after {
+            content: ''; position: absolute; top: 15%; left: 15%; width: 25%; height: 25%; background: rgba(255, 255, 255, 0.4); border-radius: 50%;
+        }
+        @keyframes subir {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-120vh) translateX(50px); opacity: 0; }
+        }
+        .burbuja:nth-child(1) { width: 40px; height: 40px; left: 10%; animation-duration: 8s; }
+        .burbuja:nth-child(2) { width: 80px; height: 80px; left: 20%; animation-duration: 12s; }
+        .burbuja:nth-child(3) { width: 30px; height: 30px; left: 35%; animation-duration: 7s; }
+        .burbuja:nth-child(4) { width: 60px; height: 60px; left: 50%; animation-duration: 10s; }
+
+        /* === CONTENEDOR DEL VIDEO === */
+        .tarjeta-video {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 50px;
+            box-shadow: 0 20px 0px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            border: 8px solid #4db8ff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contenedor-iframe {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 4px solid #e67e22;
+            margin-bottom: 20px;
+        }
+
+        .contenedor-iframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .boton-volver {
+            background: #e74c3c;
+            border: none;
+            padding: 12px 25px;
+            font-family: 'Comic Sans MS';
+            font-weight: bold;
+            color: white;
+            border-radius: 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 5px 0 #c0392b;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.2s;
+        }
+
+        .boton-volver:active {
+            transform: translateY(4px);
+            box-shadow: 0 1px 0 #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="burbujas-container">
+        <div class="burbuja"></div><div class="burbuja"></div><div class="burbuja)</div><div class="burbuja"></div>
+    </div>
+
+    <div class="tarjeta-video">
+        <h2 style="color: #e67e22; margin-top: 0;">🎬 ¡Aprende con Esponjamanía!</h2>
+        
+        <div class="contenedor-iframe">
+            <!-- REEMPLAZA EL LINK DE ABAJO POR TU VIDEO DE YOUTUBE (USA EL LINK DE "INSERTAR/EMBED") -->
+            <iframe src="c:\Users\Laboratorio\Desktop\mati 2BHC\Juego Educativo\Esponjamania Video.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <p style="background: #f0f9ff; padding: 15px; border-radius: 15px; border: 2px dashed #4db8ff;">
+            En este video te explicamos la historia de Esponjamania y sus carismaticos personajes! Al igual que la profunda historia oculta en este juego matematico de Roblox Studio. Echale un vistaso! (Video hecho con Notebooklm)
+        </p>
+
+        <a href="index.html" class="boton-volver">⬅️ VOLVER AL INICIO</a>
+    </div>
+
+</body>
+</html>
